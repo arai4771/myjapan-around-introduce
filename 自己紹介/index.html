@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Japan around
+  </title>
+  <link rel="stylesheet" href="ziko.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+  <div class="main" id="main">
+    <header >
+      <div class="head_imgwaku">
+        <div id="scrol">
+          <div>
+            <h1>Road Trip in Japan</h1>
+          </div>
+          <div id="space" >
+
+          </div>
+          
+          <div id="navnav">        
+              <ul class="snip1164" >
+                <!-- <li class="current"><a href="#" data-hover="Home">Home</a></li> -->
+                <li><a href="#introduce" data-hover="INTRODUCE">INTRODUCE</a></li>
+                <li><a href="#plan" data-hover="PLAN">PLAN</a></li>
+                <li><a href="#equip" data-hover="EQUIP">EQUIP</a></li>
+                <li><a href="#impressions" data-hover="IMPRESSIONS">IMPRESSIONS</a></li>
+                <!-- <li><a href="#" data-hover="Contact">Contact</a></li> -->
+              </ul>
+            </div>
+         
+
+        
+          
+        </div>
+        </div>
+    </header>
+    
+
+    <section>
+      <div class="top_img">
+        <p class="img_bun">まだ見ぬ向こう側への旅の記録</p>
+        <div class="tt_img">
+          <img src="./photo/IMG_3516.JPG" alt="" width="100%" height="auto" >
+
+        </div>
+      </div>
+        
+    </section>
+
+    <section>
+      <div class="title" id="introduce"><h2>INTRODUCE</h2></div>
+      <div>
+        <div class="int_cat">
+          <div class="int_img">
+            <img src="./photo/rabbit.jpg" alt="" width="220px" height="220px">
+          </div>
+          <div class="int_setumei">
+            <p>
+              初めまして<br>
+              福本隼平と申します。<br>
+              大学は鹿児島の志學館大学・心理臨床学科を卒業しており<br>
+              大学3年時にバイクで3ヶ月かけて日本一周を行いました。<br>
+              卒業後は埼玉で国際シェアハウスに住みつつ、<br>
+              正社員として体操教室のインストラクターを半年間続けたのち<br>
+              プログラミングを学びたいと思い転職いたしました。
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <div class="title" id="plan"><h2>PLAN</h2></div>
+      
+    <div id="eq_fade">
+
+      
+      <div id="space2" class="space2" >
+
+      </div>
+      <div class="plan_li" id="plan_li">
+        <div class="abtn">
+          <a @click="active" class="btn-border">push</a>
+          
+        </div>
+        
+        <table  class="table1">
+          <tr>
+            <th>日本一周のきっかけ</th>
+              
+                <td v-if="isActive">日本を知らないのに就職先を地元にしていいのかと悩んだ為</td> 
+              
+            </tr>
+            <tr>
+              <th>費用</th>
+                <td v-if="isActive">旅費用：55万、準備費:100万</td>           
+            </tr>
+            <tr>
+              <th>期間</th>
+                <td v-if="isActive">3ヶ月</td>           
+            </tr>
+            <tr>
+              <th>周り方</th>
+              <td v-if="isActive">鹿児島から時計回り</td>
+            </tr>
+            <tr>
+              <th>宿泊場所</th>
+              <td v-if="isActive">キャンプ場・ゲストハウス・ネカフェ</td>
+            </tr>
+            <tr>
+              <th>決めていたこと</th>
+              <td v-if="isActive">各県の県庁所在地を見て、どれくらい発展しているのかを見る</td>
+            </tr>
+          </table>
+        
+      </div>
+    </div>
+    </section>
+
+    <section>
+      
+      
+      <div class="title" id="equip"><h2>EQUIP</h2></div>
+      <div class="bikename">KAWASAKI Z250</div>
+      <div class="bikename2">KAWASAKI Z250</div>
+
+     <div id="eqvue" >
+
+      <div id="eqvuefade"   class="eqvuefade">
+
+     
+      <div class="eq_bikes">
+        <div class="bike1">
+          <div>
+            <img src="./photo/z250side.jpg" alt="" width="500px" height="auto">
+          </div>         
+          <div class="san san1"  @click="metabtn" ><a>▼</a></div>
+          <div class="san san2"  @click="tankbtn" ><a>▼</a></div>       
+        </div>
+
+        <div class="eq_bun">   
+
+         
+          <transition name="fade"appear>
+            <div class="meta" v-show="meta">             
+              <p>速度やガソリン残量が初心者からでも見やすい</p>
+              <div>
+                <img src="./photo/z250meter.jpg" alt="" width="90%" height="auto">
+              </div>
+            </div>
+          </transition>
+
+          <transition name="fade"appear>
+            <div class="tank" v-show="tank">
+              <p>タンク容量は17ℓ入り、燃費は38km/Lのため北海道などのガソリンスタンドの少ない地域でも安心して長距離走行が可能</p>
+              <div>
+                <img src="./photo/IMG_3393.JPG" alt="" width="100%" height="270px">
+              </div>
+            </div>
+          </transition>
+
+          <transition name="fade"appear>
+            <div class="eq_setumei" v-show="eq_setumei">
+              <p>クリックした箇所の説明が出ます</p>
+            </div>
+          </transition>
+        </div>  
+      </div>
+
+      <div class="eq_bikes2">
+
+        <div class="bike2">
+          <div>
+            <img src="./photo/z250front.jpg" alt="" width="500px" height="auto">
+          </div>
+          <div class="san san3" @click="lightbtn"><a>◀︎</a></div>
+          <div class="san san4" @click="mafrabtn"><a>▼</a></div>
+        </div>
+
+        <div class="eq_bun">   
+
+          <transition name="fade"appear>
+            <div class="light" v-show="light">
+              <p>ライトが見えやすく、夜中の走行も走りやすい</p>
+              <div>
+                <img src="./photo/light.jpg" alt="" width="500px" height="300px" alt="">
+              </div>
+            </div>
+          </transition>
+
+          <transition name="fade"appear>
+            <div class="mafra" v-show="mafra">
+              <p>二気筒のため走行時も静音かつ燃費も単気筒と四気筒の中間である</p>
+              <div>
+                <img src="./photo/maf.jpg" alt="" width="500px" height="300px" alt="">
+              </div>
+            </div>
+          </transition>
+
+          <transition name="fade"appear>
+            <div class="eq_setumei" v-show="eq_setumei2">
+              <p>クリックした箇所の説明が出ます</p>
+            </div>
+          </transition>
+
+
+
+
+        </div>  
+
+
+
+        
+        
+      </div>
+      </div>
+    </div>
+      </section>
+
+    <section>
+      <table class="table2">
+        <tr class="table2f">
+          <th colspan="4" >Z250 SPEC</th>
+        </tr>
+        <tr>
+          <th>メーカー</th>
+          <td>カワサキ</td>
+          <th>エンジンタイプ</th>
+          <td>水冷4ストローク・並列2気筒DOHC4バルブ</td>
+        </tr>
+        <tr>
+          <th>モデル名</th>
+          <td>z250</td>
+          <th>エンジン始動方式</th>
+          <td>セルフスターター</td>
+        </tr>
+        <tr>
+          <th>タイプグレード</th>
+          <td>ー</td>
+          <th>最高出力</th>
+          <td>31ps(23kw)/11000rpm</td>
+        </tr>
+        <tr>
+          <th>動力方式</th>
+          <td>ー</td>
+          <th>最大トルク</th>
+          <td>2.1kg・m(21N・m)/8500rpm</td>
+        </tr>
+        <tr>
+          <th>型式</th>
+          <td>ER250C</td>
+          <th>車体重量(乾燥重量)</th>
+          <td>147(概算値)kg</td>
+        </tr>
+        <tr>
+          <th>排気量</th>
+          <td>248cc</td>
+          <th>車体重量(装備重量)</th>
+          <td>168kg</td>
+        </tr>
+        <tr>
+          <th>発売開始年</th>
+          <td>2013年</td>
+          <th>パワーウエイトレシオ</th>
+          <td>4.7kg/PS</td>
+        </tr>
+        <tr>
+          <th>燃料消費率</th>
+          <td>38.0 km/L （ 60 km/h走行時）</td>
+          <th>全長・全高・全幅</th>
+          <td>2015mm × 1025mm × 750mm</td>
+        </tr>
+        <tr>
+          <th>燃料タンク容量</th>
+          <td>17.0リットル</td>
+          <th>シート高</th>
+          <td>785mm</td>
+        </tr>
+        <tr>
+          <th>航続可能距離</th>
+          <td>646.0km(概算値)</td>
+          <th>フロントタイヤサイズ	</th>
+          <td>110/70-17 54S</td>
+        </tr>
+        <tr>
+          <th>燃料供給方式</th>
+          <td>インジェクション</td>
+          <th>リアタイヤサイズ</th>
+          <td>140/70-17 66S</td>
+        </tr>
+
+      </table>
+
+    </section>
+
+
+
+    <section>
+      <div id="radio" class="soubi">
+      <div id="radiofade" class="radiofade">
+
+       
+        <div class="vue_radio">
+          <div class="tabs">
+            <input type="radio" id="tab1" name="tab" value="1" v-model="isActive">
+            <label for="tab1">積載物</label>
+            <input type="radio" id="tab2" name="tab" value="2" v-model="isActive">
+            <label for="tab2">その他</label>
+            
+            
+          </div>
+    
+          <ul class="contents">
+            <li v-if="isActive === '1'">
+              <div class="biggods">
+
+                <div class="bg_img">
+                  <img src="./photo/IMG_2655.JPG" alt="minibag" width="70%" height="auto">
+                </div>
+
+                <div class="gods">
+                  <a href="https://www.amazon.co.jp/gp/product/B0028EFRC2/ref=ppx_yo_dt_b_asin_image_o07_s00?ie=UTF8&psc=1">
+                    <div class="gods_img">
+                      <img src="./photo/bigbag.jpg" alt="bigbag" width="200px" height="200px">
+                      <div class="hoverimg">
+                        <p>AMAZON SHOPへ</p>
+                      </div>
+                    </div>
+                    <div class="gods_bun">
+                      <p>
+                        容量が75Lまで入りバイクの後ろにも積載可能なバック<br>
+                        着替えや様々な小道具が入る
+                      </p>
+                    </div>
+
+                  </a>
+                  </div>
+
+                  <div class="gods">
+                    <a href="https://www.amazon.co.jp/gp/product/B01KH1E9GM/ref=ppx_yo_dt_b_asin_image_o04_s01?ie=UTF8&psc=1">
+                    <div class="gods_img">
+                      <img src="./photo/tent.jpg" alt="テント" width="200px" height="200px">
+                      <div class="hoverimg">
+                        <p>AMAZON SHOPへ</p>
+                      </div>
+                    </div>
+                    <div class="gods_bun">
+                      <p>
+                        軽量組み立て式テント<br>
+                        防水性能に優れて、組み立ても簡単で機能性に優れている
+                      </p>
+                    </div>
+                    
+                  </a>
+                  </div>
+
+                  <div class="gods">
+                    <a href="https://www.amazon.co.jp/gp/product/B000BSCAPO/ref=ppx_yo_dt_b_asin_image_o04_s00?ie=UTF8&psc=1">
+                    <div class="gods_img">
+                      <img src="./photo/sito.jpg" alt="マット" width="200px" height="200px">
+                      <div class="hoverimg">
+                        <p>AMAZON SHOPへ</p>
+                      </div>
+                    </div>
+                    <div class="gods_bun">
+                      <p>
+                       キャンプ用マット <br>
+                        安価で硬い地面で寝る際も多少、寝やすくなる
+                      </p>
+                    </div>
+                    
+                  </a>
+                  </div>
+
+                  <div class="gods">
+                    <a href="https://www.amazon.co.jp/gp/product/B076DW86W3/ref=ppx_yo_dt_b_asin_image_o04_s01?ie=UTF8&psc=1">
+                    <div class="gods_img">
+                      <img src="./photo/neru.jpg" alt="寝袋" width="200px" height="200px">
+                      <div class="hoverimg">
+                        <p>AMAZON SHOPへ</p>
+                      </div>
+                    </div>
+                    <div class="gods_bun">
+                      <p>
+                        寝袋<br>
+                        とてもコンパクトかつ軽い為場所を取らない。また、最低仕様温度８度と暖かく寝れる
+                      </p>
+                    </div>
+                    
+                  </a>
+                  </div>
+
+                  <div class="gods">
+                    <a href="https://www.amazon.co.jp/gp/product/B012VOBXU8/ref=ppx_yo_dt_b_asin_image_o04_s01?ie=UTF8&psc=1">
+                    <div class="gods_img">
+                      <img src="./photo/panel.jpg" alt="太陽光発電パネル" width="200px" height="200px">
+                      <div class="hoverimg">
+                        <p>AMAZON SHOPへ</p>
+                      </div>
+                    </div>
+                    <div class="gods_bun">
+                      <p>
+                        太陽光発電パネル<br>
+                        1時間ほどでスマホも充電され、災害に備え一つ持っておくと便利
+                      </p>
+                    </div>
+                  </a>
+                    
+                  </div>
+
+                  <div class="gods">
+                    <a href="https://www.amazon.co.jp/gp/product/B01N0ZF0FB/ref=ppx_yo_dt_b_asin_image_o09_s00?ie=UTF8&psc=1">
+                    <div class="gods_img">
+                      <img src="./photo/sankyaku.jpg" alt="三脚" width="200px" height="200px">
+                      <div class="hoverimg">
+                        <p>AMAZON SHOPへ</p>
+                      </div>
+                    </div>
+                    <div class="gods_bun">
+                      <p>
+                        カメラ三脚<br>
+                        スマホも一眼レフ等のカメラも取り付け可能コンパクトかつ軽量で140cmまで伸びる
+                      </p>
+                    </div>
+                  </a>
+                    
+                  </div>
+
+                  <div class="gods">
+                    <a href="https://www.amazon.co.jp/gp/product/B01J59SGCK/ref=ppx_yo_dt_b_asin_image_o09_s00?ie=UTF8&psc=1">
+                    <div class="gods_img">
+                      <img src="./photo/minigas.jpg" alt="バーナー" width="200px" height="200px">
+                      <div class="hoverimg">
+                        <p>AMAZON SHOPへ</p>
+                      </div>
+                    </div>
+                    <div class="gods_bun">
+                      <p>
+                        ミニガスバーナー<br>
+                        市販のガスボンベで利用が可能なガスバーナー。ボンベがなくなってもコンビニでも補充できるためとても助かった
+                      </p>
+
+                    </div>
+                  </a>
+                    
+                  </div>
+
+                  <div class="gods">
+                    <a href="https://www.amazon.co.jp/gp/product/B000AR2N2Q/ref=ppx_yo_dt_b_asin_image_o09_s00?ie=UTF8&psc=1">
+                    <div class="gods_img">
+                      <img src="./photo/cup.jpg" alt="コッヘル" width="200px" height="200px">
+                      <div class="hoverimg">
+                        <p>AMAZON SHOPへ</p>
+                      </div>
+                    </div>
+                    <div class="gods_bun">
+                      <p>
+                        コッへル・クッカー<br>
+                        ラーメンを作る時などによく使用していた。この中にガスバーナーも収納できる。
+                      </p>
+                    </div>
+                  </a>
+                    
+                  </div>
+
+                  <div class="gods">
+                    <a href="https://www.amazon.co.jp/gp/product/B00JZLBPS6/ref=ppx_yo_dt_b_asin_image_o04_s01?ie=UTF8&psc=1">
+                    <div class="gods_img">
+                      <img src="./photo/lightm.jpg" alt="ランタン" width="200px" height="200px">
+                      <div class="hoverimg">
+                        <p>AMAZON SHOPへ</p>
+                      </div>
+                    </div>
+                    <div class="gods_bun">
+                      <p>
+                        ランタン<br>
+                        スマホも充電可能なコンパクトなランタン。ライトとしても使える。
+
+                      </p>
+                    </div>
+                  </a>
+                    
+                  </div>
+
+                  <div class="gods">
+                    <a href="https://www.amazon.co.jp/gp/product/B000AR4TJQ/ref=ppx_yo_dt_b_asin_image_o09_s00?ie=UTF8&psc=1">
+                    <div class="gods_img">
+                      <img src="./photo/table.jpg" alt="折り畳み机" width="200px" height="200px">
+                      <div class="hoverimg">
+                        <p>AMAZON SHOPへ</p>
+                      </div>
+                    </div>
+                    <div class="gods_bun">
+                      <p>
+                        簡易机<br>
+                        折り畳み可能なため場所を取らない
+
+                      </p>
+                    </div>
+                  </a>
+                    
+                  </div>
+
+                  <div class="gods">
+                    <a href="https://www.amazon.co.jp/gp/product/B00YC4PL40/ref=ppx_yo_dt_b_asin_image_o09_s00?ie=UTF8&psc=1">
+                    <div class="gods_img">
+                      <img src="./photo/sumaho.jpg" alt="スマホホルダー" width="200px" height="200px">
+                      <div class="hoverimg">
+                        <p>AMAZON SHOPへ</p>
+                      </div>
+                    </div>
+                    <div class="gods_bun">
+                      <p>
+                        スマホホルダー<br>
+                        旅中に一回も落ちずに活躍してくれた。様々なスマホの大きさに対応可能
+
+                      </p>
+                    </div>
+                    
+                  </a>
+                  </div>
+
+               
+              </div>
+               
+            </li>
+            <li v-else-if="isActive === '2'">
+ 
+        
+              
+              
+               
+               <div class="biggods">
+                 
+                 <div class="gods">
+                   <a href="https://www.amazon.co.jp/gp/product/B07F67TBLH/ref=ppx_yo_dt_b_asin_image_o03_s00?ie=UTF8&psc=1">
+                     
+                     <div class="gods_img">
+                       
+                       <img src="./photo/bag.jpg" alt="minibag" width="200px" height="200px">
+                         <div class="hoverimg">
+                           <p>AMAZON SHOPへ</p>
+                         </div>
+                     </div>
+                     <div class="gods_bun">
+                       <p>
+                         防水機能バッグ<br>
+                         財布・スマホ・一眼レフカメラ・充電器を入れていた
+                       </p>
+                     </div>
+                   </a>
+                   </div>
+  
+                   
+                   <div class="gods">
+                     <a href="https://www.amazon.co.jp/gp/product/B06XFP2KMC/ref=ppx_yo_dt_b_asin_image_o01_s00?ie=UTF8&psc=1">
+                     <div class="gods_img">
+                       <img src="./photo/protect.jpg" alt="protector" width="200px" height="200px">
+                       <div class="hoverimg">
+                         <p>AMAZON SHOPへ</p>
+                       </div>
+                     </div>
+                     <div class="gods_bun">
+                       <p>
+                         通気性の良い上半身プロテクター<br>
+                         暑いからと言って半袖で走れば安全性の無さと腕の日焼け防止のため購入した。速乾性もありとても役立った
+                       </p>
+                     </div>
+                   </a>
+                   </div>
+
+                   <div class="gods">
+                     <a href="https://www.amazon.co.jp/gp/product/B00OREDKLG/ref=ppx_yo_dt_b_asin_image_o05_s00?ie=UTF8&psc=1sh">
+                     <div class="gods_img">
+                       <img src="./photo/helmet.jpg" alt="protector" width="200px" height="200px">
+                       <div class="hoverimg">
+                         <p>AMAZON SHOPへ</p>
+                       </div>
+                     </div>
+                     <div class="gods_bun">
+                       <p>
+                         SHOEIヘルメット<br>
+                         サングラス機能や通風のための機能もついており安全性も問題なし
+                       </p>
+                     </div>
+                   </a>
+                   </div>
+
+                   <div class="gods">
+                     <a href="https://www.amazon.co.jp/gp/product/B06VT7BWXF/ref=ppx_yo_dt_b_asin_image_o05_s00?ie=UTF8&psc=1">
+                     <div class="gods_img">
+                       <img src="./photo/shoes.jpg" alt="protector" width="200px" height="200px">
+                       <div class="hoverimg">
+                         <p>AMAZON SHOPへ</p>
+                       </div>
+                     </div>
+                     <div class="gods_bun">
+                       <p>
+                         バイクシューズ<br>
+                         ワンタッチで固定でき、また、レバーを回転させることで紐の調節も可能
+                       </p>
+                     </div>
+                   </a>
+                   </div>
+
+                   <div class="gods">
+                     <a href="https://www.amazon.co.jp/gp/product/B07D83X9K8/ref=ox_sc_act_image_1?smid=A37RA82AUOMOAM&psc=1">
+                     <div class="gods_img">
+                       <img src="./photo/x100.jpg" alt="protector" width="200px" height="200px">
+                       <div class="hoverimg">
+                         <p>AMAZON SHOPへ</p>
+                       </div>
+                     </div>
+                     <div class="gods_bun">
+                       <p>
+                         X-T100<br>
+                         ミラーレスカメラ。画質もよく初心者でも扱いやすいカメラ。旅の後半からはカバンから出すのが面倒でスマホで撮るようになってしまい、活躍しなくなったのは内緒である。
+                       </p>
+                     </div>
+                   </a>
+
+                   </div>
+                   <div class="gods">
+                     <a href="https://www.amazon.co.jp/gp/product/B01G0O90A0/ref=ppx_od_dt_b_asin_image_s00?ie=UTF8&psc=1">
+                     <div class="gods_img">
+                       <img src="./photo/bousi.jpg" alt="protector" width="200px" height="200px">
+                       <div class="hoverimg">
+                         <p>AMAZON SHOPへ</p>
+                       </div>
+                     </div>
+                     <div class="gods_bun">
+                       <p>
+                         帽子<br>
+                         速乾性に優れ、汗をかいて汚れても洗って一晩あれば乾くため夏場の日差し帽子に役立った
+                       </p>
+                     </div>
+                   </a>
+                   </div>
+
+                   <div class="gods">
+                     <a href="https://www.amazon.co.jp/gp/product/B07HF518YJ/ref=ppx_od_dt_b_asin_image_s00?ie=UTF8&psc=1">
+                     <div class="gods_img">
+                       <img src="./photo/kasa.jpg" alt="protector" width="200px" height="200px">
+                       <div class="hoverimg">
+                         <p>AMAZON SHOPへ</p>
+                       </div>
+                     </div>
+                     <div class="gods_bun">
+                       <p>
+                         折り畳み傘<br>
+                         耐風性もあり、丈夫なため2021年の現在も愛用している傘。
+                       </p>
+                     </div>
+                   </a>
+                   </div>
+
+                   <div class="gods">
+                     
+                     <div class="gods_bun bun2">
+                       <p>
+                         その他<br>
+                         Tシャツ・パンツ・靴下　５日分<br>
+                         ズボン　３本<br>
+                         お風呂道具・ガスボンベ・トイレットペーパー<br>
+                         クロックス
+                       </p>
+                     </div>
+                   </a>
+                   </div>
+                 
+                   <div class="bg_img">
+                    <img src="./photo/IMG_2653.JPG" alt="minibag" width="70%" height="auto">
+                  </div>
+            </li>
+            
+
+
+          </ul>
+        </div>
+      </div>
+      </div>
+   
+
+      
+
+    </section>
+
+
+    <section>
+      <div class="title" id="impressions"><h2>IMPRESSIONS</h2></div>
+
+      <div id="slide" class="slide">
+        <div id="slidefade" class="slidefade">
+
+      
+        <!-- <button @click="product++">
+          NEXT
+        </button> -->
+        <!-- <div :key="products[product%6]" class="lastslide">
+          <img v-bind:src="products[product%6]" alt="KAWASAKI" width="80%" height="auto">
+        </div> -->
+        <!--%xすると必ず解は0〜x-->
+        <div class="slider-outer">
+          <transition name="slide">
+              <div class="slider-inner" :key="idx" v-for="(slide, idx) in slides" v-if="current_slide == idx">
+                <img class="slide-img" v-bind:src="slides[idx]" :key="slides[idx].img"width="450" height="300">
+              </div>
+          </transition>
+        </div>
+       </div>
+      </div>
+
+      <div class="lastbun"> 
+        <p>日本一周をやってみて学んだことは、「自分から本気で行動すれば人生は面白くなる」ということでした。<br>
+          約150万を使って日本一周を行い、そのことを学びましたがその金額以上の濃ゆい3ヶ月と様々な経験をさせていただきました。<br>
+          今後の目標として世界一周を今後したいと思った際にいつでもできるように場所に拘らずに働けるプログラミングスキルと海外の方とより一層コミュニケーションがとれるように英語力を身に付けていきたいと考えています。<br>
+          また、プログラミングを人生の勉強として続けていく予定のため、webエンジニアを目指しつつも、C#やUnityなど様々な言語を勉強していきたいと考えています。
+          <br>
+          <br>
+          
+
+            最後に本日は拝見していただき誠にありがとうございました。今回は主にVue.jsとScrollRevealを用いてwebサイトを作らせていただきました。
+          
+        </p>
+
+      </div>
+      
+    </section>
+
+
+
+  </div>  
+
+  </div>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  <script type="text/javascript" src="ziko.js"></script>
+  
+</body>
+</html>
